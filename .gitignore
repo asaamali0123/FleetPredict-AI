@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment secrets
+.env
+
+# Testing cache
+.pytest_cache/
+
+# VS Code settings
+.vscode/
+
+# Generated vector database
+vector_store/*
+!vector_store/.gitkeep
+
+# Operating-system files
+.DS_Store
+Thumbs.db
