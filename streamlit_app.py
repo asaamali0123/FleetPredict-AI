@@ -967,9 +967,8 @@ def count_fleet_anomalies(results):
 
 def hero(title, subtitle, kicker):
 
-    st.markdown(
-
-        f"""
+    st.html(
+f"""
 
         <div class="hero">
 
@@ -981,11 +980,8 @@ def hero(title, subtitle, kicker):
 
         </div>
 
-        """,
-
-        unsafe_allow_html=True,
-
-    )
+        """
+)
 
 def status_pill(status):
 
@@ -1005,13 +1001,7 @@ def status_pill(status):
 
         cls, icon = "warn", "◆"
 
-    st.markdown(
-
-        f'<span class="pill {cls}">{icon} {s}</span>',
-
-        unsafe_allow_html=True,
-
-    )
+    st.html(f'<span class="pill {cls}">{icon} {s}</span>')
 
 def clean_label(v):
 
@@ -1055,13 +1045,7 @@ def render_dict_clean(data):
 
                     )
 
-                    st.markdown(
-
-                        f'<div class="evidence">{text}</div>',
-
-                        unsafe_allow_html=True,
-
-                    )
+                    st.html(f'<div class="evidence">{text}</div>')
 
                 else:
 
@@ -1121,9 +1105,8 @@ def render_diagnosis_list(items):
 
         ref = item.get("source_reference")
 
-        st.markdown(
-
-            f"""
+        st.html(
+f"""
 
             <div class="evidence">
 
@@ -1137,11 +1120,8 @@ def render_diagnosis_list(items):
 
             </div>
 
-            """,
-
-            unsafe_allow_html=True,
-
-        )
+            """
+)
 
 # =========================================================
 
@@ -1151,9 +1131,8 @@ def render_diagnosis_list(items):
 
 with st.sidebar:
 
-    st.markdown(
-
-        """
+    st.html(
+"""
 
         <div class="brand">
 
@@ -1169,13 +1148,10 @@ with st.sidebar:
 
         </div>
 
-        """,
+        """
+)
 
-        unsafe_allow_html=True,
-
-    )
-
-    st.markdown('<div class="side-label">Navigation</div>', unsafe_allow_html=True)
+    st.html('<div class="side-label">Navigation</div>')
 
     page = st.radio(
 
@@ -1201,7 +1177,7 @@ with st.sidebar:
 
     st.divider()
 
-    st.markdown('<div class="side-label">Data Sources</div>', unsafe_allow_html=True)
+    st.html('<div class="side-label">Data Sources</div>')
 
     # Once sensor is uploaded, keep data section collapsed to preserve sidebar space.
 
@@ -1231,7 +1207,7 @@ with st.sidebar:
 
         )
 
-    st.markdown('<div class="side-label">Knowledge Base</div>', unsafe_allow_html=True)
+    st.html('<div class="side-label">Knowledge Base</div>')
 
     st.success("✓ Isuzu F-Series Manual Ready")
 
@@ -1277,9 +1253,8 @@ if sensor_upload is None:
 
         st.markdown("### What FleetPredict does")
 
-        st.markdown(
-
-            """
+        st.html(
+"""
 
             <div class="card">
 
@@ -1297,15 +1272,11 @@ if sensor_upload is None:
 
             </div>
 
-            """,
-
-            unsafe_allow_html=True,
-
-        )
-
-        st.markdown(
-
             """
+)
+
+        st.html(
+"""
 
             **Operational workflow**
 
@@ -1343,13 +1314,7 @@ if sensor_upload is None:
 
         )
 
-        st.markdown(
-
-            f'<div class="schema-grid">{chips}</div>',
-
-            unsafe_allow_html=True,
-
-        )
+        st.html(f'<div class="schema-grid">{chips}</div>')
 
     st.stop()
 
@@ -1885,11 +1850,8 @@ if page == "🛠 Maintenance History":
 
                         </div>
 
-                        """,
-
-                        unsafe_allow_html=True,
-
-                    )
+                        """
+)
 
             with right:
 
@@ -1903,9 +1865,8 @@ if page == "🛠 Maintenance History":
 
                 for item in repeated:
 
-                    st.markdown(
-
-                        f"""
+                    st.html(
+f"""
 
                         <div class="card">
 
@@ -1915,11 +1876,8 @@ if page == "🛠 Maintenance History":
 
                         </div>
 
-                        """,
-
-                        unsafe_allow_html=True,
-
-                    )
+                        """
+)
 
             st.markdown("### Recent Maintenance")
 
@@ -2059,9 +2017,8 @@ if page == "🤖 AI Diagnosis":
 
         st.markdown("### Problem")
 
-        st.markdown(
-
-            f"""
+        st.html(
+f"""
 
             <div class="card">
 
@@ -2069,11 +2026,8 @@ if page == "🤖 AI Diagnosis":
 
             </div>
 
-            """,
-
-            unsafe_allow_html=True,
-
-        )
+            """
+)
 
         st.markdown("### Health Summary")
 
@@ -2153,9 +2107,8 @@ if page == "🤖 AI Diagnosis":
 
     else:
 
-        st.markdown(
-
-            """
+        st.html(
+"""
 
             <div class="card">
 
@@ -2171,11 +2124,8 @@ if page == "🤖 AI Diagnosis":
 
             </div>
 
-            """,
-
-            unsafe_allow_html=True,
-
-        )
+            """
+)
 
 # =========================================================
 
@@ -2233,7 +2183,7 @@ if page == "📋 Data & Schema":
 
     chips = "".join(f'<div class="schema-chip">{x}</div>' for x in schema)
 
-    st.markdown(f'<div class="schema-grid">{chips}</div>', unsafe_allow_html=True)
+    st.html(f'<div class="schema-grid">{chips}</div>')
 
     st.markdown("### Maintenance Data")
 
@@ -2255,9 +2205,8 @@ if page == "📋 Data & Schema":
 
 # =========================================================
 
-st.markdown(
-
-    """
+st.html(
+"""
 
     <div class="footer">
 
@@ -2265,8 +2214,5 @@ st.markdown(
 
     </div>
 
-    """,
-
-    unsafe_allow_html=True,
-
+    """
 )
