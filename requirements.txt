@@ -4,3 +4,5 @@ sentence-transformers>=2.2.2
 faiss-cpu>=1.7.4
 groq>=0.31.0
 python-dotenv>=1.0.1
+streamlit>=1.40.0
+plotly>=5.24.0
